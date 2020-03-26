@@ -1,3 +1,9 @@
+# Program: AudioTransmit
+# Module: VoiceChannel
+# Programmer: Weston Laity
+# Desc: Provides an implementation of MyChannel's ServerChannel and ClientChannel. This allows for the user to send
+#       voice audio back and forth through the channel
+
 from interfaces import MyChannel
 import threading
 import pyaudio
@@ -6,6 +12,7 @@ import pyaudio
 class ServerChannel(MyChannel.ServerChannel):
 
     def receive(self, packet):
+        # retransmit audio packets
         self.send_packet(packet)
 
 
@@ -25,10 +32,13 @@ class ClientChannel(MyChannel.ClientChannel):
                                        channels=self.CHANNELS,
                                        rate=self.RATE,
                                        output=True)
+
+        # continuously record new user audio
         thrRecordAudio = threading.Thread(target=self.record_audio, name="thrRecordAudio")
         thrRecordAudio.start()
 
     def receive(self, packet):
+        # play through audio stream
         if packet.get_data()["command"] is not None:
             self.audioOutput.write(packet.get_data()["command"])
 
@@ -39,6 +49,7 @@ class ClientChannel(MyChannel.ClientChannel):
                                  input=True,
                                  frames_per_buffer=self.CHUNK)
         while True:
+            # continuously record new user audio
             try:
                 data = streamSend.read(self.CHUNK)
                 self.send(data)

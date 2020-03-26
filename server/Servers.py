@@ -1,3 +1,9 @@
+# Program: AudioTransmit
+# Module: Servers
+# Programmer: Weston Laity
+# Desc: This is where the server starts the program. We just start up the server socket which will handle user
+#       connections and communications
+
 from interfaces import MySocket
 
 if __name__ == '__main__':

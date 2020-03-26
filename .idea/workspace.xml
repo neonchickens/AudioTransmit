@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a09886c-105d-44c5-abaf-3aacc3f7352a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/Clients.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Servers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clients.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketClient.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/TextChannel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/TextChannel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/VoiceChannel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/VoiceChannel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Clients.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/Clients.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/MyDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/MyDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/MyChannel.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/MyChannel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/MyDataPacket.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/MyDataPacket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/MySocket.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/MySocket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Servers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/Servers.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

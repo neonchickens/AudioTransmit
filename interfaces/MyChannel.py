@@ -1,7 +1,14 @@
+# Program: AudioTransmit
+# Module: MyChannel
+# Programmer: Weston Laity
+# Desc: Provides the interface of MyChannel's ServerChannel and ClientChannel. This allows for the creation of abstract
+#       objects for server communication
+
 from interfaces import MyDataPacket
 
 
 class MyChannel:
+    # General channel structure (all channels will inherit from these)
     id = None
 
     def __init__(self, id):
@@ -11,6 +18,7 @@ class MyChannel:
         pass
 
     def send(self, data):
+        # start --> send (data) --> send_packet(packaged_data) --> destination
         mdp = MyDataPacket.MyDataPacket(None)
         mdp.get_data()["command"] = data
         self.send_packet(mdp)
@@ -20,6 +28,8 @@ class MyChannel:
 
 
 class ServerChannel(MyChannel):
+    # General channel structure for servers
+
     user2conn = {}  # id: conn
 
     def __init__(self, id, connections):
@@ -50,6 +60,8 @@ class ServerChannel(MyChannel):
 
 
 class ClientChannel(MyChannel):
+    # General channel structure for clients
+
     server = None
     userId = None
 

@@ -1,3 +1,9 @@
+# Program: AudioTransmit
+# Module: Clients
+# Programmer: Weston Laity
+# Desc: This is where the client starts the program. We ask for login information and channel information before
+#       connecting them to their destination
+
 from interfaces import MySocket
 from database.MyDatabase import MyDatabase
 
@@ -22,7 +28,6 @@ if __name__ == '__main__':
         print(f'{i}: {servers[i]["_to"]}')
     print("Choose server:")
     choice_server = servers[int(input())]["_to"]
-    print(choice_server)
 
     # Connect to text and voice sockets
     channels = mydb.find_available_channels(choice_server)
@@ -31,10 +36,6 @@ if __name__ == '__main__':
     print("Choose channel:")
     choice_index = int(input())
     choice_channel = channels[choice_index]
-    print(choice_channel)
-
-    # if choice["active"] is False:
-    # find new ip
 
     # connect to stream
     socket = MySocket.MyClientSocket(user["user"])
